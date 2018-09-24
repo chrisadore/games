@@ -33,6 +33,7 @@ $(document).ready(function() {
     const link = e.currentTarget.href
     console.log('TCL: link', link)
     const redirectTimeout = setTimeout(function() {
+      // window.history.pushState(link)
       window.location.replace(link)
     }, 2500)
     playSound(arcadeSound, { seek: 0.3 })
