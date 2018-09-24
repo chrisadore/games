@@ -34,17 +34,17 @@
 }
 
 #pacman {
-  box-shadow: inset 0px 0px 0rem 1.5rem rgb(59, 102, 202);
+  box-shadow: inset 0px 0px 0rem 1.5rem rgb(59, 102, 202), 0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
   background: rgb(16, 72, 202);
 
   &:active {
-    box-shadow: inset 0px 0px 0rem 1.5rem rgb(16, 72, 202);
+    box-shadow: inset 0px 0px 0rem 1.5rem rgb(16, 72, 202), 0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
     background: rgb(59, 102, 202);
   }
 }
 
 #flappybird {
-  box-shadow: inset 0px 0px 0rem 1.5rem rgb(221, 157, 72);
+  box-shadow: inset 0px 0px 0rem 1.5rem rgb(221, 157, 72), 0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
   background: rgb(235, 131, 12);
 
   &:active {}

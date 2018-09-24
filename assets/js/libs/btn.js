@@ -30,6 +30,11 @@ $(document).ready(function() {
 
   gameCard.on('click', function(e) {
     e.preventDefault()
+    const link = e.currentTarget.href
+    console.log('TCL: link', link)
+    const redirectTimeout = setTimeout(function() {
+      window.location.replace(link)
+    }, 2500)
     playSound(arcadeSound, { seek: 0.3 })
     const card = $(this).clone()
     const cardWidth = $(this).innerWidth()
@@ -49,6 +54,8 @@ $(document).ready(function() {
       left: `${gameContainerWidth / 2 - cardWidth / 2}px`,
       transform: 'scale(1.1)'
     })
+    var cardLoader = $(card.children('.game__card--loader')[0])
+    cardLoader.addClass('game__card--loader--show')
     backButton.addClass('show')
     backButton.on('click', function() {
       playSound(backSound, { vol: 0.2, seek: 0.4 })
@@ -57,8 +64,10 @@ $(document).ready(function() {
           card.remove()
         })
         card.off('transitionend')
+        clearTimeout(redirectTimeout)
       })
       card.css({ left: `${offset.left}px`, transform: 'scale(1)' })
+      cardLoader.removeClass('game__card--loader--show')
       $(this).removeClass('show')
       $(this).off('click')
     })

@@ -69,14 +69,14 @@ body {
     margin-bottom: 2rem; }
 
 #pacman {
-  box-shadow: inset 0px 0px 0rem 1.5rem #3b66ca;
+  box-shadow: inset 0px 0px 0rem 1.5rem #3b66ca, 0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
   background: #1048ca; }
   #pacman:active {
-    box-shadow: inset 0px 0px 0rem 1.5rem #1048ca;
+    box-shadow: inset 0px 0px 0rem 1.5rem #1048ca, 0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
     background: #3b66ca; }
 
 #flappybird {
-  box-shadow: inset 0px 0px 0rem 1.5rem #dd9d48;
+  box-shadow: inset 0px 0px 0rem 1.5rem #dd9d48, 0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
   background: #eb830c; }
 
 #somegame {
@@ -161,25 +161,59 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: none;
+    backface-visibility: hidden;
     color: white;
     letter-spacing: 0.7rem;
     flex-basis: 30%;
     height: 30vw;
-    border-radius: 0.9rem;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2), 0px -0.7rem 2.5rem rgba(0, 0, 0, 0.171);
     font-size: 3rem;
     font-family: Righteous;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative; }
+    .game__card--loader {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translateY(0%);
+      height: 60px;
+      width: 100%;
+      z-index: -1;
+      border-radius: 0.8rem 0.8rem 0 0;
+      transition: transform 0.3s ease-in; }
+      .game__card--loader--show {
+        transform: translateY(-80%); }
+      .game__card--loader:after {
+        content: 'Loading';
+        animation: loading 2s infinite;
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -30%);
+        font-size: 1.2rem;
+        font-family: joystix; }
+      .game__card--loader:after, .game__card--loader:before {
+        position: absolute; }
     .game__card > img {
       width: 100%;
       height: auto;
-      border-radius: 0.9rem 0.9rem 0 0; }
+      border-radius: 0.7rem 0.7rem 0 0; }
 
-@media (max-width: 900px) {
-  .game {
-    display: none; }
+#pacman > .game__card--loader, #flappybird > .game__card--loader, #somegame > .game__card--loader {
+  background: inherit; }
 
-  .btn-container {
-    display: flex; } }
+@keyframes loading {
+  0% {
+    content: "Loading"; }
+  25% {
+    content: "Loading."; }
+  50% {
+    content: "Loading.."; }
+  75% {
+    content: "Loading..."; }
+  100% {
+    content: "Loading"; } }
 
 /*# sourceMappingURL=style.css.map */
