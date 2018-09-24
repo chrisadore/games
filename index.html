@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Funzone</title>
+</head>
+
+<body>
+
+  <div class="splashscreen">
+    <h2 class="splashscreen__header">Funzone</h2>
+    <button class="scrolldown arcade-button">Enter</button>
+  </div>
+
+  <div class="btn-container">
+    <button class="arcade-button" id="pacman">
+      <img src="./assets/images/pcmn.gif" class="arcade-button__icon" alt="">
+      Pacman
+    </button>
+    <button class="arcade-button" id="flappybird">
+      <img src="./assets/images/flappbird.gif" class="arcade-button__icon" alt="">
+      Flappy Bird</button>
+    <button class="arcade-button" id="somegame">Some Game</button>
+  </div>
+  <div class="game-container">
+    <div class="game">
+      <a class="game__card" id="pacman">
+        <img src="./assets/images/pacman.gif" alt="">
+        <p>Pacman</p>
+      </a>
+      <a class="game__card" id="flappybird">
+        <img src="./assets/images/flappy.gif" alt="">
+        <p>Flappy Bird</p>
+      </a>
+      <a class="game__card" id="somegame">Some Game</a>
+    </div>
+  </div>
+
+  <button class="back">back</button>
+  <script src="./assets/js/libs/jquery.js"></script>
+  <script src="./assets/js/libs/howler.js"></script>
+  <script src="./assets/js/libs/btn.js"></script>
+  <script src="./assets/js/libs/spalsh.js"></script>
+</body>
+
+</html>

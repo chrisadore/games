@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            login for games
+        </title>
+    </head>
+
+    <body align="center">
+        <div id="Glogin">
+                <h1>Login</h1>
+                <input type="text" placeholder="Email" v-model="email">
+                <br>
+                <input type="password" placeholder="Password" v-model="password">
+                <br>
+                <button @click="login">Login</button>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script>
+    var config = {
+        apiKey: "AIzaSyAEZdHK98COcRt9hzxbICAPeSpXOyn0vA4",
+        authDomain: "oneiros-2018.firebaseapp.com",
+        databaseURL: "https://oneiros-2018.firebaseio.com",
+        projectId: "oneiros-2018",
+        storageBucket: "oneiros-2018.appspot.com",
+        messagingSenderId: "358484877394"
+    };
+    const app = firebase.initializeApp(config);
+    const firestore = firebase.firestore();
+    firestore.settings({
+        timestampsInSnapshots: true
+    })
+    const auth = firebase.auth();
+    </script>
+    <script>
+        new Vue({
+            el:"#Glogin",
+            data: {
+                email:'',
+                password:''
+            },
+            methods:{
+                login () {
+                    auth.signInWithEmailAndPassword (this.email, this.password)
+                        .then(function (user) {
+                            window.location='./funzone.html';
+                        })
+                        .catch(function(err) {
+                            alert('Profile dosen\'t exist');
+                        })
+                    }
+            }
+        })    
+    </script>
+    </body>
+</html>

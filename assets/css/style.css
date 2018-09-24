@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Righteous");
+@font-face {
+  font-family: 'Pacfont';
+  src: url("../fonts/PacFont.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Pacfont Good';
+  src: url("../fonts/PacFont Good.ttf") format("truetype"); }
+@font-face {
+  font-family: 'crackman';
+  src: url("../fonts/crackman.ttf") format("truetype"); }
+@font-face {
+  font-family: 'crackman back';
+  src: url("../fonts/crackman back.ttf") format("truetype"); }
+@font-face {
+  font-family: 'crackman front';
+  src: url("../fonts/crackman front.ttf") format("truetype"); }
+@font-face {
+  font-family: 'arcade';
+  src: url("../fonts/ARCADE.ttf") format("truetype"); }
+@font-face {
+  font-family: 'joystix';
+  src: url("../fonts/joystix monospace.ttf") format("truetype"); }
+html {
+  font-size: 62.5%;
+  height: 100%; }
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  font-size: 1.6rem;
+  position: relative; }
+
+.mb--2 {
+  margin-bottom: 2rem; }
+
+.btn-container {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2rem;
+  height: 100%; }
+
+.arcade-button {
+  outline: none;
+  border: none;
+  border-radius: 40px;
+  padding: 2rem 5rem;
+  font-size: 2.5rem;
+  box-shadow: inset 0px 0px 0rem 0.5rem #dd4848;
+  background: #c71e1e;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  font-family: joystix; }
+  .arcade-button__icon {
+    position: absolute;
+    display: inline-block;
+    height: 75%;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%); }
+  .arcade-button:not(:last-child) {
+    margin-bottom: 2rem; }
+
+#pacman {
+  box-shadow: inset 0px 0px 0rem 1.5rem #3b66ca;
+  background: #1048ca; }
+  #pacman:active {
+    box-shadow: inset 0px 0px 0rem 1.5rem #1048ca;
+    background: #3b66ca; }
+
+#flappybird {
+  box-shadow: inset 0px 0px 0rem 1.5rem #dd9d48;
+  background: #eb830c; }
+
+#somegame {
+  box-shadow: inset 0px 0px 0rem 1.5rem #dd4848;
+  background: #c71e1e; }
+
+.back {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  outline: none;
+  border: none;
+  border-radius: 40px;
+  padding: 2rem 5rem;
+  font-size: 2.5rem;
+  box-shadow: inset 0px 0px 0rem 0.5rem #dd4848;
+  background: #c71e1e;
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.3s linear, opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition-delay: 0.3s, 0s;
+  font-family: joystix;
+  text-transform: uppercase; }
+
+.show {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s, 0s; }
+
+.splashscreen {
+  text-align: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #e4e4e4; }
+  .splashscreen__header {
+    font-size: 6.5rem;
+    font-family: joystix;
+    background: linear-gradient(to right, #034dfa 20%, #f13901 80%);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    margin-bottom: 4rem; }
+
+.scrolldown {
+  display: inline-block; }
+
+.game-container {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  height: 100vh;
+  width: 0;
+  overflow: hidden;
+  background: #222;
+  transition: width 0.5s linear; }
+
+.game {
+  height: 100%;
+  display: flex;
+  padding: 5rem 5rem;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; }
+  .game__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    letter-spacing: 0.7rem;
+    flex-basis: 30%;
+    height: 30vw;
+    border-radius: 0.9rem;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    font-size: 3rem;
+    font-family: Righteous;
+    cursor: pointer; }
+    .game__card > img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.9rem 0.9rem 0 0; }
+
+@media (max-width: 900px) {
+  .game {
+    display: none; }
+
+  .btn-container {
+    display: flex; } }
+
+/*# sourceMappingURL=style.css.map */
