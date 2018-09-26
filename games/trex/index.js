@@ -227,68 +227,6 @@
         LOAD: 'load'
     };
 
-    
-var saveScore = function (score) {
-    var user = firebase.auth().currentUser;
-   // var scoreGreater = false
-    console.log(user.uid)
-    
-    
-        if (user){
-             firestore.collection('users').doc(user.uid)
-             .get()
-             .then(function (doc) 
-             {
-                 
-                 console.log(doc.data(), score)
-                    if(doc.data().trexscore === undefined || doc.data().trexscore < score/40)
-                    {
-                        console.log('galat')
-                        firestore.collection('users').doc(user.uid).update({
-                        trexscore : score/40 })
-                    }
-                 else {
-                     console.log('error')
-                 }
-
-            })
-
-             firestore.collection('highscores').doc('trex')
-              .get()
-              .then(function (doc) 
-              {console.log(score)
-
-                 console.log(doc.data())
-
-                     if(doc.data() === undefined) {
-                         console.log('sed')
-                         firestore.collection('highscores').doc('trex')
-                         .set({
-                             trexscore: score/40,
-                             trexuid: user.uid
-                         })
-                         .then(function () {
-                             console.log('doc cereated')
-                         })
-                     } else {
-                         if(doc.data().trexscore === undefined || doc.data().trexscore < score/40)
-                         {
-                         firestore.collection('highscores').doc('trex').update({
-                             trexscore : score/40
-                         }) 
-                         }
-                     else {
-                         console.log('error')
-                     }
-
-                     }
-                 
-             })
-
-}
-
-}
-
 
     Runner.prototype = {
         /**
@@ -854,14 +792,13 @@ var saveScore = function (score) {
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 this.distanceMeter.setHighScore(this.highestScore);
-              
-                saveScore(this.highestScore);
             }
 
             // Reset the time clock.
             this.time = getTimeStamp();
+            saveScore(this.highestScore);
         },
-        
+
 
         stop: function () {
             this.playing = false;
@@ -941,6 +878,68 @@ var saveScore = function (score) {
             }
         }
     };
+
+    var saveScore = function (score) {
+        var user = firebase.auth().currentUser;
+       // var scoreGreater = false
+        console.log(user.uid)
+        
+        
+            if (user){
+                 firestore.collection('users').doc(user.uid)
+                 .get()
+                 .then(function (doc) 
+                 {
+                     
+                     console.log(doc.data(), score)
+                        if(doc.data().trexscore === undefined || doc.data().trexscore < score/40)
+                        {
+                            console.log('galat')
+                            firestore.collection('users').doc(user.uid).update({
+                            trexscore : score/40 })
+                        }
+                     else {
+                         console.log('error')
+                     }
+    
+                })
+    
+                 firestore.collection('highscores').doc('trex')
+                  .get()
+                  .then(function (doc) 
+                  {console.log(score)
+    
+                     console.log(doc.data())
+    
+                         if(doc.data() === undefined) {
+                             console.log('sed')
+                             firestore.collection('highscores').doc('trex')
+                             .set({
+                                 trexscore: score/40,
+                                 trexuid: user.uid
+                             })
+                             .then(function () {
+                                 console.log('doc cereated')
+                             })
+                         } else {
+                             if(doc.data().trexscore === undefined || doc.data().trexscore < score/40)
+                             {
+                             firestore.collection('highscores').doc('trex').update({
+                                 trexscore : score/40
+                             }) 
+                             }
+                         else {
+                             console.log('error')
+                         }
+    
+                         }
+                     
+                 })
+    
+    }
+    
+    }
+    
 
 
     /**
