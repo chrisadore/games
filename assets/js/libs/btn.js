@@ -8,14 +8,13 @@ $(document).ready(function() {
   })
   const gameCardContainer = $('.game')
   const gameCard = $('.game__card')
-  const backButton = $('.back')
+  const controls = $('.controls-container')
   var isSmall = $(window).innerWidth() <= 900 ? true : false
 
   const playSound = function(
     sound,
     { vol = 1, seek = 0.2 } = { vol: 1, seek: 0.2 }
   ) {
-    console.log('TCL: playSound -> sound', sound)
     sound.seek(seek)
     sound.volume(vol)
     if (!sound.playing()) {
@@ -31,10 +30,9 @@ $(document).ready(function() {
   gameCard.on('click', function(e) {
     e.preventDefault()
     const link = e.currentTarget.href
-    console.log('TCL: link', link)
     const redirectTimeout = setTimeout(function() {
       // window.history.pushState(link)
-      window.location.replace(link)
+      // window.location.replace(link)
     }, 2500)
     playSound(arcadeSound, { seek: 0.3 })
     const card = $(this).clone()
@@ -57,8 +55,8 @@ $(document).ready(function() {
     })
     var cardLoader = $(card.children('.game__card--loader')[0])
     cardLoader.addClass('game__card--loader--show')
-    backButton.addClass('show')
-    backButton.on('click', function() {
+    controls.addClass('show')
+    controls.on('click', function() {
       playSound(backSound, { vol: 0.2, seek: 0.4 })
       card.on('transitionend', function() {
         gameCard.fadeIn('slow', function() {

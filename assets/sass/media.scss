@@ -1,9 +1,12 @@
-// @media (max-width: 900px) {
-//   .game {
-//     display: none;
-//   }
+@media (max-width: 900px) {
+  html {
+    font-size: 7.5px;
+  }
+  .game {
+    display: none;
+  }
 
-//   .btn-container {
-//     display: flex;
-//   }
-// }
+  .btn-container {
+    display: flex;
+  }
+}

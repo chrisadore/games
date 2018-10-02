@@ -8,6 +8,13 @@
   overflow: hidden;
   background: #222;
   transition: width 0.5s linear;
+  &__header {
+    font-size: 3.5rem;
+    position: absolute;
+    left: 50%;
+    top: 2rem;
+    transform: translateX(-50%);
+  }
 }
 
 .game {
@@ -37,7 +44,8 @@
     flex-basis: 30%;
     height: 30vw;
     border-radius: 1rem;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2), 0px -0.7rem 2.5rem rgba(0, 0, 0, 0.171);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2),
+      0px -0.7rem 2.5rem rgba(0, 0, 0, 0.171);
     font-size: 3rem;
     font-family: Righteous;
     cursor: pointer;
@@ -64,12 +72,13 @@
         position: absolute;
         left: 50%;
         top: 30%;
-        transform: translate(-50%,-30%);
+        transform: translate(-50%, -30%);
         font-size: 1.2rem;
         font-family: joystix;
       }
 
-      &:after, &:before {
+      &:after,
+      &:before {
         position: absolute;
       }
     }
@@ -82,7 +91,9 @@
   }
 }
 
-#pacman, #flappybird, #somegame {
+#pacman,
+#flappybird,
+#somegame {
   > .game__card--loader {
     background: inherit;
   }
@@ -90,22 +101,22 @@
 
 @keyframes loading {
   0% {
-    content: "Loading";
+    content: 'Loading';
   }
 
   25% {
-    content: "Loading.";
+    content: 'Loading.';
   }
 
   50% {
-    content: "Loading..";
+    content: 'Loading..';
   }
 
   75% {
-    content: "Loading...";
+    content: 'Loading...';
   }
 
   100% {
-    content: "Loading";
+    content: 'Loading';
   }
 }
