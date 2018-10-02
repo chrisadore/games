@@ -326,8 +326,10 @@ function setHighScore()
 var saveScore = function (score) {
     var user = firebase.auth().currentUser;
    // var scoreGreater = false
-    console.log(user.uid)
-    
+    console.log(firebase.auth())
+    firebase.auth().onAuthStateChanged(user => {
+        console.log(user)
+    })
     
         if (user){
              firestore.collection('users').doc(user.uid)

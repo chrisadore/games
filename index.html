@@ -12,8 +12,8 @@
     <div id="Glogin">
         <h2 class="splashscreen__header">Funzone</h2>
 
-        <h1 class="funzone__login--header">Ready to win some coupons<br> <span class="funzone__login--header--sub">Go
-                ahead knock yourself out</span></h1>
+        <h1 class="funzone__login--header">Ready to win some coupons ?<br> <span class="funzone__login--header--sub">Go
+                ahead and knock yourself out!</span></h1>
         <form action="" @submit.prevent="login">
             <input type="text" placeholder="Email" v-model="email" class="funzone__input">
             <br>
@@ -26,22 +26,7 @@
 
     <script src="./assets/js/libs/vue.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
-    <script>
-        var config = {
-            apiKey: "AIzaSyAEZdHK98COcRt9hzxbICAPeSpXOyn0vA4",
-            authDomain: "oneiros-2018.firebaseapp.com",
-            databaseURL: "https://oneiros-2018.firebaseio.com",
-            projectId: "oneiros-2018",
-            storageBucket: "oneiros-2018.appspot.com",
-            messagingSenderId: "358484877394"
-        };
-        const app = firebase.initializeApp(config);
-        const firestore = firebase.firestore();
-        firestore.settings({
-            timestampsInSnapshots: true
-        })
-        const auth = firebase.auth();
-    </script>
+    <script type="text/javascript" src="/games/main.js"></script>
     <script>
         new Vue({
             el: "#Glogin",

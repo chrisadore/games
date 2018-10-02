@@ -5,23 +5,8 @@
     <meta charset="UTF-8">
     <title>Snake</title>
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-    <script>
-        var config = {
-            apiKey: "AIzaSyAEZdHK98COcRt9hzxbICAPeSpXOyn0vA4",
-            authDomain: "oneiros-2018.firebaseapp.com",
-            databaseURL: "https://oneiros-2018.firebaseio.com",
-            projectId: "oneiros-2018",
-            storageBucket: "oneiros-2018.appspot.com",
-            messagingSenderId: "358484877394"
-        };
-        const app = firebase.initializeApp(config);
-        const firestore = firebase.firestore();
-        firestore.settings({
-            timestampsInSnapshots: true
-        })
-        const auth = firebase.auth();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>  
+    <script type="text/javascript" src="../main.js"></script>
     <script src="snake-js.js" type="text/javascript"></script>
     <script type="text/javascript">
 
@@ -48,21 +33,16 @@
     </script>
 </head>
 
-<body>
+<body style="background-color:black">
 
-    <h1>Snake JS Example</h1>
+    <h1 align="center" style="color:white">Snake Game</h1>
 
-    <div id="parent"></div>
+    <div id="parent" align="center"></div>
 
-    <p>
-        <strong>Use the arrow keys to control the snake.</strong>
+    <p align="center">
+        <strong style="color:white">Use the arrow keys to control the snake.</strong>
     </p>
 
-    <p>
-        Made by <a href="http://betamos.se/">Didrik Nordström</a>.
-        <br />
-        For more information, see the <a href="../README.md">README file</a>.
-    </p>
 
 </body>
 
