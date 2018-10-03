@@ -1,0 +1,50 @@
+.leaderboard {
+  display: grid;
+  font-family: 'Arial';
+  color: rgb(241, 241, 241);
+  padding: 1.5rem;
+  background: #222;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'game game list list list'
+    'highscore highscore list list list';
+  height: 100%;
+  grid-gap: 1.5rem;
+  > div {
+    padding: 1.5rem;
+    border-radius: 0.6rem;
+  }
+  &__gamedesc {
+    grid-area: game;
+    background: rgb(207, 174, 28);
+    text-align: center;
+  }
+  &__highscore {
+    grid-area: highscore;
+    background: rgb(28, 120, 207);
+    &--trophy {
+      display: block;
+      width: 20%;
+      margin: 0 auto;
+      margin-top: 2rem;
+    }
+    > h1 {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    > h2 {
+      margin-top: 1rem;
+      text-align: center;
+      color: rgba(226, 226, 226, 0.828);
+    }
+  }
+  &__list {
+    grid-area: list;
+    background: rgb(207, 64, 28);
+    .player-list {
+      display: block;
+      width: 100%;
+    }
+  }
+}
