@@ -11,6 +11,7 @@ $(document).ready(function() {
   const controls = $('.controls-container')
   const backButton = $('#cancel')
   const playButton = $('#play')
+
   var isSmall = $(window).innerWidth() <= 900 ? true : false
 
   const hideControls = function(e) {
@@ -40,16 +41,22 @@ $(document).ready(function() {
     const card = $(this).clone()
     const cardWidth = $(this).innerWidth()
     const offset = $(this).offset()
+    const gamename = $(card.children('.game__card--title')[0]).text()
+    const credits = $(`<a href="#" class="game--credits">
+    <span> Credits for ${gamename} </span>
+    </a>`)
     const gameContainerWidth = gameCardContainer.innerWidth()
     var cardLoader = $(card.children('.game__card--loader')[0])
     var redirectTimeout
 
-    card.click(function() {
-      e.preventDefault()
-    })
-
+    $('body').append(credits)
+    credits.fadeIn()
     gameCard.fadeOut()
     gameCardContainer.append(card)
+
+    card.click(function(e) {
+      e.preventDefault()
+    })
 
     card.css({
       left: `${offset.left}px`,
@@ -61,7 +68,7 @@ $(document).ready(function() {
     })
     card.css({
       left: `${gameContainerWidth / 2 - cardWidth / 2}px`,
-      transform: 'scale(1.1)'
+      transform: 'scale(1.06)'
     })
 
     controls.addClass('show')
@@ -71,8 +78,7 @@ $(document).ready(function() {
       cardLoader.addClass('game__card--loader--show')
       redirectTimeout = setTimeout(function() {
         console.log('TCL: redirectTimeout -> redirectTimeout', redirectTimeout)
-        // window.history.pushState(link)
-        window.location.replace(link)
+        window.location.href = link
       }, 2500)
       $(this).off('click')
     })
@@ -85,10 +91,13 @@ $(document).ready(function() {
           card.remove()
         })
         card.off('transitionend')
-        console.log('TCL: redirectTimeout', redirectTimeout)
       })
       card.css({ left: `${offset.left}px`, transform: 'scale(1)' })
       cardLoader.removeClass('game__card--loader--show')
+      credits.fadeOut(function() {
+        credits.remove()
+      })
+      console.log('TCL: redirectTimeout', redirectTimeout)
       clearTimeout(redirectTimeout)
       $(this).off('click')
     })
