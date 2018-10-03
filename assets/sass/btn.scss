@@ -34,34 +34,49 @@
 }
 
 #pacman {
-  box-shadow: inset 0px 0px 0rem 1.5rem rgb(59, 102, 202), 0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
+  box-shadow: inset 0px 0px 0rem 1.5rem rgb(59, 102, 202),
+    0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
   background: rgb(16, 72, 202);
 
   &:active {
-    box-shadow: inset 0px 0px 0rem 1.5rem rgb(16, 72, 202), 0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
+    box-shadow: inset 0px 0px 0rem 1.5rem rgb(16, 72, 202),
+      0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
     background: rgb(59, 102, 202);
   }
 }
 
 #flappybird {
-  box-shadow: inset 0px 0px 0rem 1.5rem rgb(221, 157, 72), 0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
+  box-shadow: inset 0px 0px 0rem 1.5rem rgb(221, 157, 72),
+    0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
   background: rgb(235, 131, 12);
 
-  &:active {}
+  &:active {
+  }
 }
 
 #somegame {
   box-shadow: inset 0px 0px 0rem 1.5rem rgb(221, 72, 72);
   background: rgb(199, 30, 30);
 
-  &:active {}
+  &:active {
+  }
 }
 
-.back {
+.controls-container {
   position: fixed;
   bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.3s linear,
+    opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition-delay: 0.3s, 0s;
+}
+
+.back {
   outline: none;
   border: none;
   border-radius: 40px;
@@ -71,12 +86,13 @@
   background: rgb(199, 30, 30);
   color: white;
   cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: visibility 0.3s linear, opacity 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  transition-delay: 0.3s, 0s;
   font-family: joystix;
   text-transform: uppercase;
+  margin-left: 2rem;
+  &--play {
+    box-shadow: inset 0px 0px 0rem 0.5rem rgb(75, 224, 88);
+    background: rgb(30, 199, 58);
+  }
 }
 
 .show {
