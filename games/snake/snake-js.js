@@ -79,17 +79,17 @@ function SnakeJS(parentElement, config){
 
 	var defaultConfig = {
 		autoInit : true,					// Game inits automagically
-		gridWidth : 30,						// Width of the game grid
-		gridHeight : 20,					// Height of the game grid
+		gridWidth : 45,						// Width of the game grid
+		gridHeight : 30,					// Height of the game grid
 		frameInterval : 150,				// Milliseconds between frames (@todo change to speed?)
 		pointSize : 16,						// Size of one grid point
 		backgroundColor : "white",			// Color of the background. CSS3 color values
-		snakeColor : "#4b4312",				// Color of the snake
+		snakeColor : "#145A32",				// Color of the snake
 		snakeEyeColor : "white",			// Color of the snake's eye
 		candyColor : "#b11c1c",				// Color of the candy
 		shrinkingCandyColor : "#199C2C",	// Color of the special candy that shrinks
-		scoreBoardColor : "#c0c96b",		// Color of the score board
-		scoreTextColor : "#4b4312",			// Color of the score numbers on the score board
+		scoreBoardColor : "#212F3C",			// Color of the score board
+		scoreTextColor : "white",			// Color of the score numbers on the score board
 		collisionTolerance : 1				// Still frames before collision. More = easier
 	};
 

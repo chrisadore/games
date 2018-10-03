@@ -47,6 +47,7 @@ html, body {
 }
 
 .offline .runner-canvas {
+  
   height: 150px;
   max-width: 600px;
   opacity: 1;
