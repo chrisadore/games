@@ -128,7 +128,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #e4e4e4; }
+  background: url("../images/whitevectorbg.jpg"); }
   .splashscreen__header {
     font-size: 6.5rem;
     font-family: joystix;
@@ -149,16 +149,20 @@ body {
   height: 100vh;
   width: 0;
   overflow: hidden;
-  background: #222;
   transition: width 0.5s linear; }
   .game-container__header {
     font-size: 3.5rem;
     position: absolute;
     left: 50%;
     top: 2rem;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    z-index: 1;
+    color: aliceblue; }
 
 .game {
+  background: url("../images/background2.jpg");
+  background-size: cover;
+  background-position: top center;
   height: 100%;
   display: flex;
   padding: 5rem 5rem;
@@ -182,6 +186,7 @@ body {
     display: none;
     text-decoration: none; }
   .game__card {
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -199,38 +204,50 @@ body {
     position: relative; }
     .game__card--title {
       margin-top: 2rem; }
-    .game__card--loader {
-      position: absolute;
-      left: 0;
-      top: 0;
-      transform: translateY(0%);
-      height: 60px;
+    .game__card > picture {
+      display: block;
       width: 100%;
-      z-index: -1;
-      border-radius: 0.8rem 0.8rem 0 0;
-      transition: transform 0.3s ease-in; }
-      .game__card--loader--show {
-        transform: translateY(-80%); }
-      .game__card--loader:after {
-        content: 'Loading';
-        animation: loading 2s infinite;
-        position: absolute;
-        left: 50%;
-        top: 30%;
-        transform: translate(-50%, -30%);
-        font-size: 1.2rem;
-        font-family: joystix; }
-      .game__card--loader:after, .game__card--loader:before {
-        position: absolute; }
-    .game__card > img {
-      width: 100%;
-      height: auto;
-      border-radius: 0.7rem 0.7rem 0 0; }
+      height: auto; }
+      .game__card > picture > img {
+        display: block;
+        width: 100%; }
+
+.selectedCard {
+  transition: transform 0.3s ease-in, left 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  position: absolute; }
 
 #pacman > .game__card--loader,
 #flappybird > .game__card--loader,
 #somegame > .game__card--loader {
   background: inherit; }
+
+.game-loader {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+  padding: 2rem;
+  width: 300px;
+  height: 83px;
+  z-index: 2;
+  border-radius: 0 0 1rem 1rem;
+  transition: transform 0.3s ease-in;
+  box-shadow: inset 0px 0px 0rem 1.5rem #dd4848;
+  background: #c71e1e;
+  z-index: 2; }
+  .game-loader--show {
+    transform: translate(-50%, 0%); }
+  .game-loader:after {
+    content: 'Loading';
+    animation: loading 2s infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    position: absolute;
+    font-family: joystix;
+    color: white; }
 
 @keyframes loading {
   0% {
@@ -245,7 +262,7 @@ body {
     content: 'Loading'; } }
 #Glogin {
   height: 100%;
-  background: #222;
+  background: url("../images/blackbg.jpg");
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -277,7 +294,7 @@ body {
       border-bottom: 2px solid white;
       border-left: 1px solid transparent;
       border-right: 1px solid transparent;
-      content: "";
+      content: '';
       z-index: 2;
       animation: spin 0.5s infinite ease-in-out; }
 .funzone__input {
@@ -388,10 +405,29 @@ body {
   html {
     font-size: 7.5px; }
 
-  .game {
-    display: none; }
+  .controls-container {
+    bottom: 8rem; }
 
-  .btn-container {
-    display: flex; } }
+  .game {
+    flex-direction: column;
+    padding-top: 9rem;
+    justify-content: center; }
+    .game__card {
+      width: 100%;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-basis: 20%;
+      margin-top: 2rem; }
+      .game__card > picture {
+        flex-basis: 30%;
+        padding: 2rem;
+        height: auto; }
+      .game__card--title {
+        margin-top: 0; }
+
+  .selectedCard {
+    margin-top: 0;
+    transition: transform 0.3s ease-in, top 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); } }
 
 /*# sourceMappingURL=style.css.map */

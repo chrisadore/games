@@ -6,7 +6,7 @@
   height: 100vh;
   width: 0;
   overflow: hidden;
-  background: #222;
+  // background: linear-gradient(to bottom, #adadad, #111);
   transition: width 0.5s linear;
   &__header {
     font-size: 3.5rem;
@@ -14,10 +14,15 @@
     left: 50%;
     top: 2rem;
     transform: translateX(-50%);
+    z-index: 1;
+    color: aliceblue;
   }
 }
 
 .game {
+  background: url('../images/background2.jpg');
+  background-size: cover;
+  background-position: top center;
   height: 100%;
   display: flex;
   padding: 5rem 5rem;
@@ -42,6 +47,7 @@
     text-decoration: none;
   }
   &__card {
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,44 +69,22 @@
       margin-top: 2rem;
     }
 
-    &--loader {
-      position: absolute;
-      left: 0;
-      top: 0;
-      transform: translateY(0%);
-      height: 60px;
-      width: 100%;
-      z-index: -1;
-      border-radius: 0.8rem 0.8rem 0 0;
-      transition: transform 0.3s ease-in;
-
-      &--show {
-        transform: translateY(-80%);
-      }
-
-      &:after {
-        content: 'Loading';
-        animation: loading 2s infinite;
-        position: absolute;
-        left: 50%;
-        top: 30%;
-        transform: translate(-50%, -30%);
-        font-size: 1.2rem;
-        font-family: joystix;
-      }
-
-      &:after,
-      &:before {
-        position: absolute;
-      }
-    }
-
-    > img {
+    > picture {
+      display: block;
       width: 100%;
       height: auto;
-      border-radius: 0.7rem 0.7rem 0 0;
+      > img {
+        display: block;
+        width: 100%;
+      }
     }
   }
+}
+
+.selectedCard {
+  transition: transform 0.3s ease-in,
+    left 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  position: absolute;
 }
 
 #pacman,
@@ -108,6 +92,38 @@
 #somegame {
   > .game__card--loader {
     background: inherit;
+  }
+}
+
+.game-loader {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+  padding: 2rem;
+  width: 300px;
+  height: 83px;
+  z-index: 2;
+  border-radius: 0 0 1rem 1rem;
+  transition: transform 0.3s ease-in;
+  box-shadow: inset 0px 0px 0rem 1.5rem rgb(221, 72, 72);
+  background: rgb(199, 30, 30);
+  z-index: 2;
+  &--show {
+    transform: translate(-50%, 0%);
+  }
+
+  &:after {
+    content: 'Loading';
+    animation: loading 2s infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    position: absolute;
+    font-family: joystix;
+    color: white;
   }
 }
 

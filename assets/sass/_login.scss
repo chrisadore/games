@@ -1,6 +1,6 @@
 #Glogin {
   height: 100%;
-  background: #222;
+  background: url('../images/blackbg.jpg');
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +41,7 @@
           border-bottom: 2px solid white;
           border-left: 1px solid transparent;
           border-right: 1px solid transparent;
-          content: "";
+          content: '';
           z-index: 2;
           animation: spin 0.5s infinite ease-in-out;
         }

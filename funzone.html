@@ -19,7 +19,10 @@
 
   <div class="btn-container">
     <button class="arcade-button" id="pacman">
-      <img src="./assets/images/pcmn.gif" class="arcade-button__icon" alt="">
+      <picture>
+        <source srcset="./assets/images/pacman.gif" media="(max-width: 800px)">
+        <img src="./assets/images/pcmn.gif" class="arcade-button__icon" alt="">
+      </picture>
       Pacman
     </button>
     <button class="arcade-button" id="flappybird">
@@ -33,19 +36,32 @@
     <a href="#" class="game--credits">
       <span>Credits for</span>
     </a>
+    <div class="game-loader">
 
+    </div>
     <div class="game">
+
       <a href="./games/pacman/index.html" class="game__card" id="pacman">
-        <img src="./assets/images/pacman.gif" alt="">
+        <picture>
+          <source srcset="./assets/images/pcmn.gif" media="(max-width: 800px)">
+          <img src="./assets/images/pacman.gif" alt="">
+        </picture>
         <p class="game__card--title">Pacman</p>
-        <div class="game__card--loader"></div>
       </a>
       <a href="./games/floppybird/index.html" class="game__card" id="flappybird">
-        <img src="./assets/images/flappy.gif" alt="">
+        <picture>
+          <source srcset="./assets/images/flappbird.gif" media="(max-width: 800px)">
+          <img src="./assets/images/flappy.gif" alt="">
+        </picture>
         <p class="game__card--title">Flappy Bird</p>
-        <div class="game__card--loader"></div>
       </a>
-      <a class="game__card" id="somegame">Some Game</a>
+      <a href="./games/spaceinvaders2/index.html" class="game__card" id="somegame">
+        <picture>
+          <source srcset="./assets/images/pcmn.gif" media="(max-width: 800px)">
+          <img src="./assets/images/spaceinvaders.jpg" alt="">
+        </picture>
+        <p class="game__card--title">Space Invader</p>
+      </a>
     </div>
   </div>
   <div class="controls-container">
