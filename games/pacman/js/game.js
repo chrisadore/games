@@ -374,7 +374,8 @@ var saveScore = function(score) {
               .collection('highscores')
               .doc('pacman')
               .update({
-                pacmanscore: score
+                pacmanscore: score,
+                pacmanuid: user.uid
               })
           } else {
             console.log('error')
