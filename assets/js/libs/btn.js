@@ -71,9 +71,7 @@ $(document).ready(function() {
     card.addClass('selectedCard')
     gameCardContainer.append(card)
 
-    card.click(function(e) {
-      e.preventDefault()
-    })
+    card.off('click')
 
     card.css({
       left: `${offset.left}px`,

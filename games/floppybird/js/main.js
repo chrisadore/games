@@ -306,11 +306,6 @@ function setHighScore() {
 
 var saveScore = function(score) {
   var user = firebase.auth().currentUser
-  // var scoreGreater = false
-  console.log(firebase.auth())
-  firebase.auth().onAuthStateChanged(user => {
-    console.log(user)
-  })
 
   if (user) {
     firestore
@@ -329,8 +324,7 @@ var saveScore = function(score) {
             .collection('users')
             .doc(user.uid)
             .update({
-              flappybirdscore: score,
-              flappyuid: user.uid
+              flappybirdscore: score
             })
         } else {
           console.log('your score<=your highscore')
@@ -342,10 +336,6 @@ var saveScore = function(score) {
       .doc('flappy')
       .get()
       .then(function(doc) {
-        console.log(score)
-
-        console.log(doc.data())
-
         if (doc.data() === undefined) {
           console.log('sed')
           firestore
@@ -367,7 +357,8 @@ var saveScore = function(score) {
               .collection('highscores')
               .doc('flappy')
               .update({
-                flappybirdscore: score
+                flappybirdscore: score,
+                flappyuid: user.uid
               })
           } else {
             console.log('error')
