@@ -128,7 +128,10 @@ $(document).ready(function() {
       credits.fadeOut(function() {
         credits.remove()
       })
-      clearTimeout(redirectTimeout)
+      if (redirectTimeout) {
+        clearTimeout(redirectTimeout)
+        redirectTimeout = null
+      }
       $(this).off('click')
     })
   })
