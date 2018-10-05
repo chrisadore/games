@@ -79,9 +79,13 @@ body {
   box-shadow: inset 0px 0px 0rem 1.5rem #dd9d48, 0px -0.9rem 2.5rem rgba(0, 0, 0, 0.308);
   background: #eb830c; }
 
-#somegame {
+#spaceinvaders {
   box-shadow: inset 0px 0px 0rem 1.5rem #dd4848;
   background: #c71e1e; }
+
+#trex {
+  box-shadow: inset 0px 0px 0rem 1.5rem #1cdb7c;
+  background: #04b65d; }
 
 .controls-container {
   position: fixed;
@@ -216,9 +220,12 @@ body {
   transition: transform 0.3s ease-in, left 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   position: absolute; }
 
+#trex {
+  display: none; }
+
 #pacman > .game__card--loader,
 #flappybird > .game__card--loader,
-#somegame > .game__card--loader {
+#spaceinvaders > .game__card--loader {
   background: inherit; }
 
 .game-loader {
@@ -244,7 +251,7 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     position: absolute;
     font-family: joystix;
     color: white; }
@@ -263,6 +270,8 @@ body {
 #Glogin {
   height: 100%;
   background: url("../images/blackbg.jpg");
+  background-size: cover;
+  background-position: top center 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -408,6 +417,12 @@ body {
   .controls-container {
     bottom: 8rem; }
 
+  #trex {
+    display: flex; }
+
+  #spaceinvaders {
+    display: none; }
+
   .game {
     flex-direction: column;
     padding-top: 9rem;
@@ -429,5 +444,8 @@ body {
   .selectedCard {
     margin-top: 0;
     transition: transform 0.3s ease-in, top 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); } }
+@media (max-width: 361px) {
+  html {
+    font-size: 6.5px; } }
 
 /*# sourceMappingURL=style.css.map */

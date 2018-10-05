@@ -54,9 +54,17 @@
   }
 }
 
-#somegame {
+#spaceinvaders {
   box-shadow: inset 0px 0px 0rem 1.5rem rgb(221, 72, 72);
   background: rgb(199, 30, 30);
+
+  &:active {
+  }
+}
+
+#trex {
+  box-shadow: inset 0px 0px 0rem 1.5rem rgb(28, 219, 124);
+  background: rgb(4, 182, 93);
 
   &:active {
   }

@@ -12,8 +12,21 @@ $(document).ready(function() {
   const controls = $('.controls-container')
   const backButton = $('#cancel')
   const playButton = $('#play')
-
+  const trex = $('#trex').clone()
+  console.log('TCL: trex', trex)
+  const spaceinvaders = $('#spaceinvaders').clone()
+  console.log('TCL: spaceinvaders', spaceinvaders)
+  $('#trex').remove()
+  $('#spaceinvaders').remove()
   var isSmall = $(window).innerWidth() <= smallBP ? true : false
+
+  if (!isSmall) {
+    gameCardContainer.append(spaceinvaders)
+    $('#trex').remove()
+  } else {
+    gameCardContainer.append(trex)
+    $('#spaceinvaders').remove()
+  }
 
   const hideControls = function(e) {
     controls.removeClass('show')
@@ -35,7 +48,7 @@ $(document).ready(function() {
     playSound(arcadeSound, { seek: 0.3 })
   })
 
-  gameCard.on('click', function(e) {
+  $('body').on('click', '.game__card', function(e) {
     e.preventDefault()
     playSound(arcadeSound, { seek: 0.3 })
     const link = e.currentTarget.href
@@ -44,6 +57,7 @@ $(document).ready(function() {
     const cardHeight = $(this).innerHeight()
     const offset = $(this).offset()
     const gamename = $(card.children('.game__card--title')[0]).text()
+    const gameCard = $('.game__card')
     const credits = $(`<a href="#" class="game--credits">
     <span> Credits for ${gamename} </span>
     </a>`)
@@ -121,5 +135,12 @@ $(document).ready(function() {
   })
   $(window).on('resize', function() {
     isSmall = $(window).innerWidth() <= smallBP ? true : false
+    if (!isSmall) {
+      gameCardContainer.append(spaceinvaders)
+      $('#trex').remove()
+    } else {
+      gameCardContainer.append(trex)
+      $('#spaceinvaders').remove()
+    }
   })
 })
