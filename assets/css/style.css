@@ -277,6 +277,14 @@ body {
   justify-content: center;
   align-items: center; }
 
+.signup {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-family: joystix;
+  color: #fff;
+  text-transform: uppercase; }
+
 .funzone__login--header {
   color: white;
   margin-bottom: 3rem;
@@ -413,6 +421,12 @@ body {
 @media (max-width: 900px) {
   html {
     font-size: 7.5px; }
+
+  .signup {
+    right: 50%;
+    transform: translateX(50%);
+    width: 90%;
+    bottom: 2rem; }
 
   .controls-container {
     bottom: 8rem; }

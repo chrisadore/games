@@ -9,6 +9,15 @@
   align-items: center;
 }
 
+.signup {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-family: joystix;
+  color: #fff;
+  text-transform: uppercase;
+}
+
 .funzone {
   &__login {
     &--header {
