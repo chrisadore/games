@@ -421,7 +421,7 @@ h3 {
   screen and (min-device-height: 480px) and (max-device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
   #panel,
   #home {
-    zoom: 60%;
+    zoom: 80%;
   }
   #control-up-big,
   #control-down-big,

@@ -3,8 +3,9 @@
 <html>
 
 <head>
+
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
-  <script type="text/javascript" src="../main.js"></script>
+  <script type="text/javascript" src="../../main.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
   <meta name="description" content="Pac-Man game written in HTML5 + CSS3 + jQuery with Canvas. This WebApp is a Responsive Web Design (RWD) website." />
@@ -148,11 +149,11 @@
               movePacman(4);
             }
           } else if (e.keyCode === 68 && !PAUSE) {
-						/*if ( $("#canvas-paths").css("display") === "none" ) { 
-							$("#canvas-paths").show();
-						} else { 
-							$("#canvas-paths").hide();
-						}*/
+            /*if ( $("#canvas-paths").css("display") === "none" ) { 
+              $("#canvas-paths").show();
+            } else { 
+              $("#canvas-paths").hide();
+            }*/
           } else if (e.keyCode === 80 && !PACMAN_DEAD && !LOCK) {
             if (PAUSE) {
               resumeGame();
@@ -168,7 +169,7 @@
     });
   </script>
 
-  <title>Pac-Man</title>
+  <title>Lucio PANEPINTO - Pac-Man</title>
 </head>
 
 <body>
@@ -208,7 +209,7 @@
 
   <div id="home">
     <h1>pac-man</h1>
-    <h3>Click here to start!</h3>
+    <h3>Lucio PANEPINTO<br><em>2015</em></h3>
     <canvas id="canvas-home-title-pacman"></canvas>
     <div id="presentation">
       <div id="presentation-titles">character &nbsp;/&nbsp; nickname</div>
@@ -228,12 +229,11 @@
     <canvas id="trailer"></canvas>
     <div class="help-button">- help -</div>
     <a class="sound" href="javascript:void(0);" data-sound="on"><img src="img/sound-on.png" alt="" border="0"></a>
-
+    <a class="github" target="_blank" href="https://github.com/luciopanepinto/pacman"><img src="img/github.png" alt="GitHub - Lucio PANEPINTO - Pac-Man"></a>
   </div>
 
   <div id="panel">
     <h1>pac-man</h1>
-
     <canvas id="canvas-panel-title-pacman"></canvas>
     <div id="score">
       <h2>1UP</h2><span>00</span>
@@ -256,7 +256,7 @@
       <div id="control-left-big"></div>
       <div id="control-right-big"></div>
     </div>
-    <div id="control" margin-to="100px">
+    <div id="control">
       <div id="control-up"></div>
       <div id="control-up-second"></div>
       <div id="control-down"></div>
@@ -270,7 +270,6 @@
     <div class="help-button">- help -</div>
     <a class="sound" href="javascript:void(0);" data-sound="on"><img src="img/sound-on.png" alt="" border="0"></a>
   </div>
-
 </body>
 
 </html>
