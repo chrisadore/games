@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Righteous");
+
+@font-face {
+  font-family: 'Pacfont';
+  src: url("../fonts/PacFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Pacfont Good';
+  src: url("../fonts/PacFont Good.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'crackman';
+  src: url("../fonts/crackman.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'crackman back';
+  src: url("../fonts/crackman back.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'crackman front';
+  src: url("../fonts/crackman front.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'arcade';
+  src: url("../fonts/ARCADE.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'joystix';
+  src: url("../fonts/joystix monospace.ttf") format("truetype");
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.mb {
+  &--2 {
+    margin-bottom: 2rem;
+  }
+}

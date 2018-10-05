@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>
+        Funzone
+    </title>
+</head>
+
+<body align="center">
+    <div id="Glogin">
+        <h2 class="splashscreen__header">Funzone</h2>
+
+        <h1 class="funzone__login--header">Ready to win some coupons ?<br> <span class="funzone__login--header--sub">Go
+                ahead and knock yourself out!</span></h1>
+        <form action="" @submit.prevent="login">
+            <input type="text" placeholder="Email" v-model="email" class="funzone__input">
+            <br>
+            <input type="password" placeholder="Password" v-model="password" class="funzone__input">
+            <br>
+            <button class="arcade-button funzone__login--button" :class="{ 'funzone__login--button--loading': this.loading }">{{text}}</button>
+        </form>
+
+    </div>
+
+    <script src="./assets/js/libs/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script type="text/javascript" src="/games/main.js"></script>
+    <script>
+        new Vue({
+            el: "#Glogin",
+            data: {
+                email: '',
+                password: '',
+                loading: false
+            },
+            computed: {
+            },
+            computed: {
+                text: function () {
+                    return this.loading ? "" : "Login"
+                }
+            },
+            methods: {
+                login(e) {
+                    this.loading = !this.loading
+                    var this2 = this
+                    auth.signInWithEmailAndPassword(this.email, this.password)
+                        .then(function (user) {
+                            window.location = './funzone.html';
+                        })
+                        .catch(function (err) {
+                            // alert('Profile dosen\'t exist');
+                            this2.loading = !this2.loading
+                        })
+                }
+            }
+        })    
+    </script>
+</body>
+
+</html>

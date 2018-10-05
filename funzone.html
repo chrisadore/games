@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html>
     <head>
         <title>
@@ -29,4 +30,89 @@
             </a>
         </div>
     </body>
+=======
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Funzone</title>
+</head>
+
+<body>
+
+  <div class="splashscreen">
+    <h2 class="splashscreen__header">Funzone</h2>
+    <button class="scrolldown arcade-button">Enter</button>
+  </div>
+
+
+  <div class="btn-container">
+    <button class="arcade-button" id="pacman">
+      <picture>
+        <source srcset="./assets/images/pacman.gif" media="(max-width: 800px)">
+        <img src="./assets/images/pcmn.gif" class="arcade-button__icon" alt="">
+      </picture>
+      Pacman
+    </button>
+    <button class="arcade-button" id="flappybird">
+      <img src="./assets/images/flappbird.gif" class="arcade-button__icon" alt="">
+      Flappy Bird</button>
+    <button class="arcade-button" id="somegame">Some Game</button>
+  </div>
+
+  <div class="game-container">
+    <h2 class="splashscreen__header game-container__header">Funzone</h2>
+    <a href="#" class="game--credits">
+      <span>Credits for</span>
+    </a>
+    <div class="game-loader">
+
+    </div>
+    <div class="game">
+
+      <a href="./games/pac2/pacman/index.html" class="game__card" id="pacman">
+        <picture>
+          <source srcset="./assets/images/pcmn.gif" media="(max-width: 800px)">
+          <img src="./assets/images/pacman.gif" alt="">
+        </picture>
+        <p class="game__card--title">Pacman</p>
+      </a>
+      <a href="./games/floppybird/index.html" class="game__card" id="flappybird">
+        <picture>
+          <source srcset="./assets/images/flappbird.gif" media="(max-width: 800px)">
+          <img src="./assets/images/flappy.gif" alt="">
+        </picture>
+        <p class="game__card--title">Flappy Bird</p>
+      </a>
+      <a href="./games/spaceinvaders2/index.html" class="game__card" id="spaceinvaders">
+        <picture>
+          <source srcset="./assets/images/spaceinvadersmall.png" media="(max-width: 800px)">
+          <img src="./assets/images/spaceinvaders.jpg" alt="">
+        </picture>
+        <p class="game__card--title">Space Invader</p>
+      </a>
+      <a href="./games/trex/index.html" class="game__card" id="trex">
+        <picture>
+          <source srcset="./assets/images/spaceinvadersmall.png" media="(max-width: 800px)">
+          <img src="./assets/images/spaceinvaders.jpg" alt="">
+        </picture>
+        <p class="game__card--title">T-Rex</p>
+      </a>
+    </div>
+  </div>
+  <div class="controls-container">
+    <button class="back back--play" id="play">Play</button>
+    <button class="back" id="cancel">back</button>
+  </div>
+  <script src="./assets/js/libs/jquery.js"></script>
+  <script src="./assets/js/libs/barba.js"></script>
+  <script src="./assets/js/libs/howler.js"></script>
+  <script src="./assets/js/libs/btn.js"></script>
+  <script src="./assets/js/libs/spalsh.js"></script>
+</body>
+
+>>>>>>> chris
 </html>

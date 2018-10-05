@@ -1,0 +1,121 @@
+.leaderboard {
+  display: grid;
+  font-family: 'Arial';
+  color: rgb(241, 241, 241);
+  padding: 1.5rem;
+  background: #222;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'game game list list list'
+    'highscore highscore list list list';
+  height: 100vh;
+  overflow: hidden;
+  grid-gap: 1.5rem;
+  div {
+    padding: 1.5rem;
+    border-radius: 0.6rem;
+    box-shadow: 0rem 0.7rem 3rem rgba(12, 12, 12, 0.712);
+  }
+  &__gamedesc {
+    grid-area: game;
+    background: rgb(243, 202, 19);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    &--logo {
+      width: 30%;
+      margin-bottom: 2rem;
+    }
+  }
+  &__highscore {
+    grid-area: highscore;
+    background: rgb(28, 120, 207);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    &--backdrop {
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      opacity: 0.6;
+    }
+    &--trophy {
+      display: block;
+      width: 20%;
+      margin: 0 auto;
+      margin-top: 2rem;
+    }
+    > h1 {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    > h2 {
+      margin-top: 1rem;
+      text-align: center;
+      color: rgba(226, 226, 226, 0.924);
+    }
+  }
+  & &__list {
+    padding: 2.5rem;
+    grid-area: list;
+    background: rgb(207, 64, 28);
+    .player-list {
+      display: block;
+      margin-top: 2rem;
+      width: 100%;
+      height: 90%;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f12a;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: rgb(226, 226, 226);
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgb(209, 209, 209);
+      }
+
+      tbody {
+        display: block;
+        width: 100%;
+      }
+      tr {
+        padding: 1.5rem 1rem;
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid rgba(226, 226, 226, 0.828);
+        th,
+        td {
+          flex: 1;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .leaderboard {
+    grid-auto-rows: minmax(0, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'game'
+      'highscore'
+      'list';
+    & &__list {
+      .player-list {
+        height: 80%;
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+      }
+    }
+  }
+}
