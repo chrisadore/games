@@ -37,6 +37,13 @@
             },
             computed: {
             },
+            created() {
+                firebase.auth().onAuthStateChanged(function (user) {
+                    if (user) {
+                        window.location.href = '/funzone.html'
+                    }
+                })
+            },
             computed: {
                 text: function () {
                     return this.loading ? "" : "Login"
