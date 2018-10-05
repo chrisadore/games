@@ -8,7 +8,6 @@ $(document).ready(function() {
     src: ['/assets/sounds/button1.mp3']
   })
   const gameCardContainer = $('.game')
-  const gameCard = $('.game__card')
   const controls = $('.controls-container')
   const backButton = $('#cancel')
   const playButton = $('#play')
