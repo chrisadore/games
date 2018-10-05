@@ -12,9 +12,7 @@ $(document).ready(function() {
   const backButton = $('#cancel')
   const playButton = $('#play')
   const trex = $('#trex').clone()
-  console.log('TCL: trex', trex)
   const spaceinvaders = $('#spaceinvaders').clone()
-  console.log('TCL: spaceinvaders', spaceinvaders)
   $('#trex').remove()
   $('#spaceinvaders').remove()
   var isSmall = $(window).innerWidth() <= smallBP ? true : false
@@ -47,7 +45,8 @@ $(document).ready(function() {
     playSound(arcadeSound, { seek: 0.3 })
   })
 
-  $('body').on('click', '.game__card', function(e) {
+  const animateCards = function(e) {
+    console.log('card click')
     e.preventDefault()
     playSound(arcadeSound, { seek: 0.3 })
     const link = e.currentTarget.href
@@ -71,7 +70,9 @@ $(document).ready(function() {
     card.addClass('selectedCard')
     gameCardContainer.append(card)
 
-    card.off('click')
+    card.click(function(e) {
+      e.preventDefault()
+    })
 
     card.css({
       left: `${offset.left}px`,
@@ -132,14 +133,19 @@ $(document).ready(function() {
       }
       $(this).off('click')
     })
-  })
+  }
+
+  $('.game__card').on('click', animateCards)
+
   $(window).on('resize', function() {
     isSmall = $(window).innerWidth() <= smallBP ? true : false
     if (!isSmall) {
       gameCardContainer.append(spaceinvaders)
+      $('#spaceinvaders').click(animateCards)
       $('#trex').remove()
     } else {
       gameCardContainer.append(trex)
+      $('#trex').click(animateCards)
       $('#spaceinvaders').remove()
     }
   })
