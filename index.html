@@ -60,7 +60,7 @@
             created() {
                 firebase.auth().onAuthStateChanged(function (user) {
                     if (user) {
-                        window.location.href = '/funzone.html'
+                        window.location.href = './funzone.html'
                     }
                 })
             },
@@ -75,11 +75,11 @@
                     var this2 = this
                     auth.signInWithEmailAndPassword(this.email, this.password)
                         .then(function (user) {
-                            window.location = './funzone.html';
+                            window.location.href = './funzone.html';
                         })
                         .catch(function (err) {
-                            // alert('Profile dosen\'t exist');
                             this2.loading = !this2.loading
+                            alert('Wrong Credentials');
                         })
                 }
             }

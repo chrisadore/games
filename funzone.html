@@ -14,7 +14,7 @@
   <div class="splashscreen">
     <h2 class="splashscreen__header">Funzone</h2>
     <button class="scrolldown arcade-button">Enter</button>
-    <button class="scrolldown arcade-button">Logout</button>
+    <button class="arcade-button" id="logout">Logout</button>
   </div>
 
 
@@ -82,6 +82,11 @@
   <script src="./assets/js/libs/btn.js"></script>
   <script src="./assets/js/libs/spalsh.js"></script>
   <script src="./games/main.js"></script>
+  <script>
+    document.querySelector('#logout').addEventListener('click', function (e) {
+      firebase.auth().signOut()
+    })
+  </script>
 </body>
 
 </html>
