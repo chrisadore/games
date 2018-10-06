@@ -422,6 +422,9 @@ body {
       height: 80%; }
       .leaderboard .leaderboard__list .player-list::-webkit-scrollbar {
         width: 8px; } }
+@media (max-width: 900px) {
+  html {
+    font-size: 8px; } }
 @media (max-width: 600px) {
   html {
     font-size: 7.5px; }
@@ -452,10 +455,13 @@ body {
       align-items: center;
       flex-basis: 20%;
       margin-top: 2rem; }
+      .game__card #pacmanimage {
+        margin-right: 2rem; }
       .game__card > picture {
-        flex-basis: 30%;
-        padding: 2rem;
+        flex-basis: 25%;
         height: auto; }
+        .game__card > picture > img {
+          display: inline-block; }
       .game__card--title {
         margin-top: 0; }
 

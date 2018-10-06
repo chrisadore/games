@@ -1,3 +1,8 @@
+@media (max-width: 900px) {
+  html {
+    font-size: 8px;
+  }
+}
 @media (max-width: 600px) {
   html {
     font-size: 7.5px;
@@ -34,12 +39,14 @@
       align-items: center;
       flex-basis: 20%;
       margin-top: 2rem;
+      #pacmanimage {
+        margin-right: 2rem;
+      }
       > picture {
-        flex-basis: 30%;
-        // width: 20%;
-        padding: 2rem;
+        flex-basis: 25%;
         height: auto;
         > img {
+          display: inline-block;
         }
       }
       &--title {
