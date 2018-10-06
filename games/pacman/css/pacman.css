@@ -495,3 +495,9 @@ h3 {
     top: 347px;
   }
 }
+@media (max-width: 600px) {
+  #panel,
+  #home {
+    zoom: 70%;
+  }
+}
