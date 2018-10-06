@@ -277,6 +277,10 @@ body {
   justify-content: center;
   align-items: center; }
 
+#enter {
+  box-shadow: inset 0px 0px 0rem 0.6rem #1cdb7c;
+  background: #04b65d; }
+
 .signup {
   position: fixed;
   bottom: 1rem;
